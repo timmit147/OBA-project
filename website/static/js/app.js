@@ -21,10 +21,10 @@ fetch(url, config)
     localStorage.setItem('data', JSON.stringify(data));
   })
   .catch(err => {
+    console.log(err);
     if(localStorage.getItem('data')){
       render(JSON.parse(localStorage.getItem('data')));
     }
-    console.log(err);
 
 
     
