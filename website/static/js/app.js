@@ -21,7 +21,7 @@ fetch(url, config)
     localStorage.setItem('data', JSON.stringify(data));
   })
   .catch(err => {
-        console.log(err);
+        // console.log(err);
     if(localStorage.getItem('data')){
       render(JSON.parse(localStorage.getItem('data')));
     }
@@ -35,10 +35,10 @@ fetch(url, config)
 function render(data) {
   const results = data.results;
   // console.dir(results);
-  console.log(data.results[0].titles[0]);
+  // console.log(data.results[0].titles[0]);
   const html = `
             <article>
-            <img src="${
+            <img  crossorigin="" src="${
               data.results[0].coverimages ? data.results[0].coverimages[1] : 'Geen samenvatting'
             }">
               <h1>${data.results[0].titles[0]}</h1>
@@ -47,32 +47,38 @@ function render(data) {
           `;
     main.insertAdjacentHTML('beforeend', html);
    
+    function getBase64FromImageUrl(url) {
+      var img = new Image();
+    
+      img.setAttribute('crossOrigin', 'anonymous');
+    
+      img.onload = function () {
+          var canvas = document.createElement("canvas");
+          canvas.width =this.width;
+          canvas.height =this.height;
+    
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(this, 0, 0);
+    
+          var dataURL = canvas.toDataURL("image/png");
+          document.getElementById('i').src = dataURL;
+      };
+    
+      img.src = url;
+    }
+    getBase64FromImageUrl(document.getElementById('i').src);
 
-    var rgb = getAverageRGB(document.getElementById('i'));
-    document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
+    
+    document.body.addEventListener("click", function (evt) {
+      alert("body clicked");
+      var rgb = getAverageRGB(document.getElementById('i'));
+  });
 
-function getAverageRGB(imgEl) {
-  imgEl.crossOrigin = '';
+    async function getAverageRGB(imgEl) {
 
-
-
-  function getBase64Image(img) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-    var dataURL = canvas.toDataURL("image/png");
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-  }
-  
-  var base64 = getBase64Image(imgEl);
-
-
-  imgEl.src = base64;
-  console.log(base64);
-  console.log(imgEl.src);
-
+console.log(imgEl.src);
+// getBase64FromImageUrl(document.getElementById('i').src);
+// console.log(imgEl.src);
 
     var blockSize = 5, // only visit every 5 pixels
         defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
@@ -96,7 +102,7 @@ function getAverageRGB(imgEl) {
     try {
         data = context.getImageData(0, 0, width, height);
     } catch(e) {
-        /* security error, img on diff domain */alert('x');
+        // /* security error, img on diff domain */alert('x');
         return defaultRGB;
     }
     
@@ -113,7 +119,8 @@ function getAverageRGB(imgEl) {
     rgb.r = ~~(rgb.r/count);
     rgb.g = ~~(rgb.g/count);
     rgb.b = ~~(rgb.b/count);
-    
+    console.log(rgb);
+        document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
     return rgb;
     
 }
