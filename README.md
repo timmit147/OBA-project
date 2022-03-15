@@ -3,7 +3,7 @@
 ## User story Voeding en diëtiek 
 Als sportieve twintiger wil ik mij verdiepen in het effect van gezonde voeding op mijn conditie, om te leren hoe ik mijn sport beter kan beoefenen.
 
-Link to website: https://timmit147.github.io/OBA-project/
+Link to website: https://timmit147.github.io/OBA-project/website/
 
 - [x] Fork github
 - [x] Kies een user story
