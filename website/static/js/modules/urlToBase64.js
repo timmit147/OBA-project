@@ -1,6 +1,6 @@
 import {getAverageRGB} from './imageColor.js' 
 
-export function getBase64FromImageUrl(url) {
+export async function getBase64FromImageUrl(url) {
     var img = new Image();
 
     img.setAttribute('crossOrigin', 'anonymous');
@@ -13,13 +13,9 @@ export function getBase64FromImageUrl(url) {
         ctx.drawImage(this, 0, 0);
         var dataURL = canvas.toDataURL("image/png");
         document.getElementById('i').src = dataURL;
+        var rgb = getAverageRGB(document.getElementById('i'));
     };
 
     img.src = url;
 
-
-
-    document.body.addEventListener("click", function (evt) {
-        var rgb = getAverageRGB(document.getElementById('i'));
-    });
 }

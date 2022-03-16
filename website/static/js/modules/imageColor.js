@@ -1,6 +1,6 @@
 
 
-export async function getAverageRGB(imgEl) {
+export function getAverageRGB(imgEl) {
 
 console.log(imgEl.src);
 // getBase64FromImageUrl(document.getElementById('i').src);
@@ -46,7 +46,8 @@ rgb.r = ~~(rgb.r/count);
 rgb.g = ~~(rgb.g/count);
 rgb.b = ~~(rgb.b/count);
 console.log(rgb);
-    document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
+// document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
+document.querySelector(":root").style.setProperty('--color1', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')');
 return rgb;
 
 }

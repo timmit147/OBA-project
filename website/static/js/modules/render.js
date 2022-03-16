@@ -10,10 +10,14 @@ export function render(data) {
                 data.results[0].coverimages[1]}">
                 <h1>${data.results[0].titles[0]}</h1>
                 <p>${data.results[0].summaries}</p>
-                <p>${data.results[0].year}</p>
+                <p class="year">${data.results[0].year}</p>
               </article>
             `;
     const main = document.querySelector('main');
     main.insertAdjacentHTML('beforeend', html);
     getBase64FromImageUrl(document.getElementById('i').src);
+
+    document.querySelector(".year").style.fontSize = "3rem";
+    window.getComputedStyle(document.querySelector('.year'), ':before').style.backgroundColor = "red";
+
 }
