@@ -30,9 +30,9 @@ article img {
   position: fixed;
   top: 20px;
   left: 50%;
-  height: 50vh;
+  height: 40vh;
   transform: translate(-50%, 0%);
-  border: 10px solid var(--color2);
+  border: 10px solid var(--color1);
 }
 
 article h1 {
@@ -50,17 +50,24 @@ article p:first-of-type {
   top: 60vh;
   left: 10vw;
   right: 20vw;
-  color: black;
+  color: var(--color1);
+  background-color: white;
+  border: var(--color1) solid 1px;
+  padding: 10px;
 }
 
 
-#food{
+.food{
   width: -webkit-fill-available;
   position: fixed;
   top: 40vh;
   left: -10vw;
   height: -webkit-fill-available;
   background-color: var(--color1);
+  clip-path: url(#svgPath);
+}
+
+body .food2{
   clip-path: url(#svgPath2);
 }
 
@@ -73,11 +80,10 @@ article p:nth-of-type(2){
   position: fixed;
   top: 50vh;
   right: 50px;
-  font-size: 3em;
   writing-mode: vertical-rl;
   text-orientation: upright;
   line-height: 0; /* Collapse the original line */
-  font-size: 0px;
+  font-size: 1px;
   color: var(--color1);
 }
 
@@ -90,6 +96,16 @@ article p:nth-of-type(2):before{
   left: -28px;
   font-size: 3rem;
 }
+
+article .setNumber{
+  font-size: 3rem;
+}
+
+
+body article .setNumber:before{
+  font-size: 0rem;
+}
+
 
 @keyframes seconds {
   0% {
@@ -127,4 +143,9 @@ article p:nth-of-type(2):before{
   90% {
       content: '1285';
   }
+}
+
+
+img#i {
+  display: none;
 }
