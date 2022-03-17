@@ -282,6 +282,11 @@ body article .setNumber:before{
 }
 
 
-img#i {
-  display: none;
+
+img#pizza {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  top: 100px;
 }

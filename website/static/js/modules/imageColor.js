@@ -1,6 +1,6 @@
 export function getAverageRGB(imgEl) {
 
-// console.log(imgEl.src);
+// console.log(imgEl);
 // getBase64FromImageUrl(document.getElementById('i').src);
 // console.log(imgEl.src);
 

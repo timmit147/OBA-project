@@ -2,7 +2,7 @@ import {getBase64FromImageUrl} from './urlToBase64.js'
 import {numbers} from './numbers.js' 
 import {navigate} from './navigate.js' 
 
-export  function render(data, item) {
+export async function render(data, item) {
     const results = data.results;
     if( results[item]){
       if(results[item].year){
@@ -34,13 +34,8 @@ export  function render(data, item) {
         document.querySelector(".content > a").href = results[item].detailLink;
       }
 
-      // if(results[item].coverimages[1]){
-      //   setTimeout(function () {
-      //     console.log("hallo");
-      //     document.querySelector("#imageid").src = getBase64FromImageUrl(document.querySelector("#imageid"))
-      //   }, 1500);
-      // }
-              
+        getBase64FromImageUrl();
+
 
       navigate(data);
     }

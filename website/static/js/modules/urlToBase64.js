@@ -1,7 +1,15 @@
 import {getAverageRGB} from './imageColor.js' 
 
-export async function getBase64FromImageUrl(img) {
-    img.setAttribute('crossOrigin', 'anonymous');
+
+export async function getBase64FromImageUrl() {
+  const aaa = document.querySelector("#imageid").src;
+
+  let text = "https://cors-anywhere.herokuapp.com/"+document.querySelector("#imageid").src;
+let result = text.replace("&token=c1322402", "&token=c1322402");
+console.log(result);
+  document.querySelector("#pizza").src = result;
+  console.log(document.querySelector("#pizza"));
+  var img = document.querySelector("#pizza");
     var canvas = document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
@@ -9,6 +17,6 @@ export async function getBase64FromImageUrl(img) {
     ctx.drawImage(img, 0, 0);
     var dataURL = canvas.toDataURL("image/png");
     console.log(dataURL);
-    getAverageRGB(document.querySelector("#imageid"));    
+    getAverageRGB(document.querySelector("#pizza"));    
   }
     
