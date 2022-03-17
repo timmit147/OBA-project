@@ -80,6 +80,7 @@ article img {
   animation-timing-function: linear;
   background: linear-gradient(to top, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
   margin-bottom: 70px;
+  transition: all 0.9s;
 }
 
 img.logo {
@@ -107,6 +108,9 @@ img.logo {
 .content a {
   color: #FE0000;
   font-weight: 800;
+  border: 2px solid;
+  width: max-content;
+  padding: 0px 10px;
 }
 
 article h1 {
@@ -119,6 +123,7 @@ article h1 {
   width: 80%;
   max-width: 400px;
   z-index: 1;
+  transition: all 0.8s;
 }
 
 
@@ -152,24 +157,34 @@ article .content p {
   background-color: white;
   border: var(--color1) solid 1px;
   padding: 10px;
+  transition: all 0.9s;
 }
 
 
 .food{
   width: 150vw;
   position: fixed;
-  top: 30vh;
-  left: -10vw;
+  top: 20vh;
+  left: -20vw;
   height: 150vw;
   background-color: var(--color1);
   clip-path: url(#svgPath);
+  transition: 1.5s left;
 }
 
 body .food2{
   clip-path: url(#svgPath2);
-  top: 50%;
+  top: 40%;
   left: -85%;
   transform: rotate(50deg);
+}
+
+body .hideFrutit{
+  left: -180vw;
+}
+
+body .opacityImage{
+  opacity: 0;
 }
 
 

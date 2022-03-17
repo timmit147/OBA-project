@@ -24,10 +24,10 @@ fetch(url, config)
   })
   .catch(err => {
     console.log(err);
-    // if(localStorage.getItem('data')){
-    //   render(JSON.parse(localStorage.getItem('data')), 0);
-    // }
-    // else{
+    if(localStorage.getItem('data')){
+      render(JSON.parse(localStorage.getItem('data')), 0);
+    }
+    else{
       async function readTextFile(file) {
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
@@ -39,7 +39,6 @@ fetch(url, config)
                 {
                     var allText = rawFile.responseText;
                     allText = JSON.parse(allText);
-                    console.log(allText);
                     render(allText, 0);
                 }
             }
@@ -47,7 +46,7 @@ fetch(url, config)
         rawFile.send(null);
     }
    readTextFile("././data/nutrition.json");
-    // }
+    }
   });
 }
   

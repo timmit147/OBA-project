@@ -3,7 +3,6 @@ import {numbers} from './numbers.js'
 import {navigate} from './navigate.js' 
 
 export  function render(data, item) {
-  console.log(data);
     const results = data.results;
     if( results[item]){
       if(results[item].year){
