@@ -16,8 +16,7 @@ html {
 body {
   font-size: 1em;
   padding: 0;
-  margin: 0;
-  color: pink;
+  color: white;
   background-color: white;
   max-width: 50em;
   margin: 0 auto;
@@ -30,26 +29,77 @@ article img {
   position: fixed;
   top: 20px;
   left: 50%;
-  height: 40vh;
+  height: 35vh;
   transform: translate(-50%, 0%);
   border: 10px solid var(--color1);
+  min-width: 10em;
+  animation-duration: 9s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: fff;
+  background: linear-gradient(to top, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+}
+
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 0 100em;
+  }
+}
+
+
+.content{
+  top: 45%;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 article h1 {
-  position: fixed;
-  left: 5vw;
-  top: 50vh;
-  border: 1px solid;
+  position: relative;
+  border: 5px solid var(--color1);
   padding: 10px;
   color: var(--color1);
   background-color: white;
+  align-self: center;
+  width: 60vw;
+  z-index: 1;
+}
+article h1 span:nth-child(1),article h1 span:nth-child(2){
+  content: " ";
+  position: absolute;
+  color: white;
+  clip-path: url(#next);
+  background-color: white;
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
+  top: 0.5em;
 }
 
-article p:first-of-type {
-  position: fixed;
-  top: 60vh;
+article h1 span:nth-child(1){
+  left: -40px;
+}
+
+article h1 span:nth-child(2){
+  right: -40px;
+  background-color: var(--color1);
+  transform: scaleX(-1);
+  cursor: pointer;
+}
+
+article .content p {
+  position: relative;
   left: 10vw;
-  right: 20vw;
+  width: 80vw;
   color: var(--color1);
   background-color: white;
   border: var(--color1) solid 1px;
@@ -76,29 +126,30 @@ body .food2{
 
 /* Counter */
 
-article p:nth-of-type(2){
+article .year{
   position: fixed;
-  top: 50vh;
+  top: 5vh;
   right: 50px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   line-height: 0; /* Collapse the original line */
-  font-size: 1px;
+  font-size: 0px;
   color: var(--color1);
+  font-weight: 900;
 }
 
-article p:nth-of-type(2):before{
+article .year:before{
   content: "0";
   animation:  seconds  1s steps(1) infinite;
   display: block;
   line-height: initial;
   position: absolute;
   left: -28px;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 article .setNumber{
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 

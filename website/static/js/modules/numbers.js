@@ -1,7 +1,7 @@
-export function numbers(value){
+export function numbers(){
 
 setTimeout(function () {
-    document.querySelector(".year").style.fontSize = "3rem";
+    document.querySelector(".year").style.fontSize = "4rem";
     document.querySelector(".year").classList.add("setNumber");
 }, 1500);
 

@@ -23,7 +23,7 @@ fetch(url, config)
     localStorage.setItem('data', JSON.stringify(data));
   })
   .catch(err => {
-        console.log(err);
+        // console.log(err);
     if(localStorage.getItem('data')){
       render(JSON.parse(localStorage.getItem('data')), 0);
       
