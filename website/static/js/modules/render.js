@@ -3,25 +3,46 @@ import {numbers} from './numbers.js'
 import {navigate} from './navigate.js' 
 
 export  function render(data, item) {
-  if( data.results[item]){
+  console.log(data);
     const results = data.results;
-    const html = `
-              <article>
-              <div class="food"></div>
-              <img src="${
-                data.results[item].coverimages[1]}">
-                <div class="content">
-                <h1><span class="prev"></span>${data.results[item].titles[0]}<span class="next"></span></h1>
-                <p>${data.results[item].summaries}</p>
-                </div>
-                <p class="year">${data.results[item].year}</p>
-                <img id="i"  src="https://media.istockphoto.com/photos/feline-picture-id108226626?k=20&m=108226626&s=612x612&w=0&h=bDaWwxhcygjerdR71qQu8YFSXaDUIi_HUZV2AADg5L8=" />
-              </article>
-            `;
-    const main = document.querySelector('main');
-    main.insertAdjacentHTML('beforeend', html);
-    getBase64FromImageUrl(document.getElementById('i').src);
-    numbers(data.results[item].year);
-    navigate(data);
+    if( results[item]){
+      if(results[item].year){
+        document.querySelector(".year").innerHTML = results[item].year;
+        numbers(results[item].year);
+        document.querySelector(".year").style.fontSize = "0rem";
+        document.querySelector(".year").classList.remove("setNumber");
       }
+      else{
+        document.querySelector(".year").innerHTML = "";
+      }
+
+      if(results[item].coverimages[1]){
+        document.querySelector("#imageid").src = results[item].coverimages[1];
+      }
+      if(results[item].titles[0]){
+        document.querySelector("h1").innerHTML = '<span class="prev"></span>'+results[item].titles[0]+'<span class="next"></span>';
+      }
+      else{
+        document.querySelector("h1").innerHTML = '<span class="prev"></span>Geen Titel<span class="next"></span>';
+      }
+      if(results[item].summaries){
+        document.querySelector(".content > p").innerHTML = results[item].summaries;
+      }
+      else{
+        document.querySelector(".content > p").innerHTML = "Geen samenvating";
+      }
+      if(results[item].detailLink){
+        document.querySelector(".content > a").href = results[item].detailLink;
+      }
+
+      // if(results[item].coverimages[1]){
+      //   setTimeout(function () {
+      //     console.log("hallo");
+      //     document.querySelector("#imageid").src = getBase64FromImageUrl(document.querySelector("#imageid"))
+      //   }, 1500);
+      // }
+              
+
+      navigate(data);
+    }
 }

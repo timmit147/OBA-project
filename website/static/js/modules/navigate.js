@@ -4,7 +4,7 @@ var item = 0;
 
 export function navigate(data){
     function changeNavigate(){
-        document.querySelector('main').innerHTML = "";
+        // document.querySelector('main').innerHTML = "";
         render(data, item);
         if(item % 2 != 0) {
         document.querySelector(".food").classList.toggle("food2");
@@ -12,6 +12,9 @@ export function navigate(data){
     }
     if(item < 1){
         document.querySelector('.prev').style.display = "none";
+    }
+    if(data.results.length < item + 2){
+        document.querySelector('.next').style.display = "none";
     }
     document.querySelector('.next').addEventListener('click',function next(e){
         item++;

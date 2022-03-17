@@ -15,33 +15,76 @@ html {
 }
 body {
   font-size: 1em;
-  padding: 0;
   color: white;
   background-color: white;
-  max-width: 50em;
   margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: scroll;
+  height: 100vh;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+header{
+  display: flex;
+  width: calc(100% - 1em);
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  justify-content: space-between;
+}
+
+header p {
+  color: #FE0000;
+  position: relative;
+  font-size: 1.5em;
+}
+
 main {
-  padding: 2rem;
+  margin-top: 3em;
+}
+
+article {
+  position: relative;
+  width: 100%;
 }
 
 article img {
-  position: fixed;
+  position: relative;
   top: 20px;
   left: 50%;
-  height: 35vh;
+  height: 14em;
+  min-height: 14em;
   transform: translate(-50%, 0%);
-  border: 10px solid var(--color1);
+  border: 1px solid var(--color1);
   min-width: 10em;
   animation-duration: 9s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
-  background: fff;
   background: linear-gradient(to top, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  margin-bottom: 70px;
 }
 
+img.logo {
+  width: 15vw;
+}
 
 @keyframes placeHolderShimmer {
   0% {
@@ -54,13 +97,16 @@ article img {
 
 
 .content{
-  top: 45%;
-  left: 0;
-  position: fixed;
-  width: 100vw;
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.content a {
+  color: #FE0000;
+  font-weight: 800;
 }
 
 article h1 {
@@ -70,13 +116,15 @@ article h1 {
   color: var(--color1);
   background-color: white;
   align-self: center;
-  width: 60vw;
+  width: 80%;
+  max-width: 400px;
   z-index: 1;
 }
+
+
 article h1 span:nth-child(1),article h1 span:nth-child(2){
   content: " ";
   position: absolute;
-  color: white;
   clip-path: url(#next);
   background-color: white;
   height: 2em;
@@ -98,8 +146,8 @@ article h1 span:nth-child(2){
 
 article .content p {
   position: relative;
-  left: 10vw;
-  width: 80vw;
+  width: 100%;
+  max-width: 600px;
   color: var(--color1);
   background-color: white;
   border: var(--color1) solid 1px;
@@ -108,17 +156,20 @@ article .content p {
 
 
 .food{
-  width: -webkit-fill-available;
+  width: 150vw;
   position: fixed;
-  top: 40vh;
+  top: 30vh;
   left: -10vw;
-  height: -webkit-fill-available;
+  height: 150vw;
   background-color: var(--color1);
   clip-path: url(#svgPath);
 }
 
 body .food2{
   clip-path: url(#svgPath2);
+  top: 50%;
+  left: -85%;
+  transform: rotate(50deg);
 }
 
 
@@ -127,15 +178,16 @@ body .food2{
 /* Counter */
 
 article .year{
-  position: fixed;
-  top: 5vh;
-  right: 50px;
+  position: absolute;
+  top: 0;
+  right: 1.5rem; 
   writing-mode: vertical-rl;
   text-orientation: upright;
   line-height: 0; /* Collapse the original line */
   font-size: 0px;
   color: var(--color1);
   font-weight: 900;
+  z-index: 1;
 }
 
 article .year:before{
@@ -144,7 +196,7 @@ article .year:before{
   display: block;
   line-height: initial;
   position: absolute;
-  left: -28px;
+  right: -2.5rem;
   font-size: 4rem;
 }
 
