@@ -1,9 +1,9 @@
-export function getAverageRGB(imgEl) {
+export async function getAverageRGB(imgEl) {
 
 // console.log(imgEl);
 // getBase64FromImageUrl(document.getElementById('i').src);
 // console.log(imgEl.src);
-
+// setTimeout(donothing,500);
 var blockSize = 5, // only visit every 5 pixels
     defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
     canvas = document.createElement('canvas'),
