@@ -1,5 +1,5 @@
 :root {
-  --color1: #B0551A;
+  --color1: black;
   --color2: #D0982B;
   --color3: brown;
 }
@@ -68,7 +68,7 @@ article {
 
 article img {
   position: relative;
-  top: 20px;
+  top: 30px;
   height: 14em;
   min-height: 14em;
   border: 1px solid var(--color1);
@@ -283,10 +283,11 @@ body article .setNumber:before{
 
 
 
-img#pizza {
+#imageGetColor {
   width: 100px;
   height: 100px;
   position: fixed;
   left: 0;
   top: 100px;
+  display: none;
 }

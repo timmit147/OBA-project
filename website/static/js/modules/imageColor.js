@@ -1,9 +1,7 @@
+// Import modules 
 export async function getAverageRGB(imgEl) {
 
-// console.log(imgEl);
-// getBase64FromImageUrl(document.getElementById('i').src);
-// console.log(imgEl.src);
-// setTimeout(donothing,500);
+// Sourse: https://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript
 var blockSize = 5, // only visit every 5 pixels
     defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
     canvas = document.createElement('canvas'),
@@ -43,7 +41,7 @@ while ( (i += blockSize * 4) < length ) {
 rgb.r = ~~(rgb.r/count);
 rgb.g = ~~(rgb.g/count);
 rgb.b = ~~(rgb.b/count);
-document.querySelector(":root").style.setProperty('--color1', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')');
-return rgb;
 
+// Change root variable is css to color of image
+document.querySelector(":root").style.setProperty('--color1', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')');
 }
