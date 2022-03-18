@@ -6,7 +6,7 @@ Als sportieve twintiger wil ik mij verdiepen in het effect van gezonde voeding o
 Link to website: https://timmit147.github.io/OBA-project/website/
 
 ## Schetsen
-![Web 1920 – 10](https://user-images.githubusercontent.com/29665951/158983933-e324cf02-85e9-47e1-8111-acf757d7f0aa.png)
+![Web 1920 – 10](https://user-images.githubusercontent.com/29665951/158983933-e324cf02-85e9-47e1-8111-acf757d7f0aa.png | width=10)
 
 
 ## Ontwerp v1
