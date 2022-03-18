@@ -1,4 +1,5 @@
 # Project 1 @cmda-minor-web · 2020-2021
+Ik heb een app gemaakt die verschillenden boeken laat zien met het onderwerp Voeding en diëtiek. Elke boek pagina past zich aan op basis van welk boek getoont word.
 
 ## User story Voeding en diëtiek 
 Als sportieve twintiger wil ik mij verdiepen in het effect van gezonde voeding op mijn conditie, om te leren hoe ik mijn sport beter kan beoefenen.
@@ -6,6 +7,9 @@ Als sportieve twintiger wil ik mij verdiepen in het effect van gezonde voeding o
 Link to website: https://timmit147.github.io/OBA-project/website/
 
 ## Schetsen
+
+Ik ben begonnen met het schetsten voor dekstop website met verschillenden boeken maar ben uitijndelijk overgegaan naar mobiel.
+
 <img src="https://user-images.githubusercontent.com/29665951/158983933-e324cf02-85e9-47e1-8111-acf757d7f0aa.png"  width="250px">
 
 
