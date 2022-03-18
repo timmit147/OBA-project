@@ -21,6 +21,16 @@ Link to website: https://timmit147.github.io/OBA-project/website/
 
 <img src="https://user-images.githubusercontent.com/29665951/158984599-d18d1198-971e-4c05-9f16-e04e2eb80649.png"  width="250px">
 
+## UX states
+
+### Loading state 
+De afbeelding krijgt een animatie dat het bezig is met laden.
+
+### Error state 
+Wanneer er geen title, sammenvatting of link is krijg je een text terug Geen titel of geen sammenvatting.
+
+![image](https://user-images.githubusercontent.com/29665951/158991211-820eccaa-31c9-4889-8d30-3076790ca85d.png)
+
 ## Problemen code
 Tijdens het werken aan dit project ben ik een aantal problemen tegen gekomen.
 
