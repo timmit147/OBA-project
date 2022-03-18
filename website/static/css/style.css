@@ -1,18 +1,24 @@
+/* Global variablen from page */
 :root {
   --color1: black;
   --color2: #D0982B;
   --color3: brown;
 }
 
+/* Remove all default settings */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* Add font to hole page */
 html {
   font: 100% / 200% 'Trebuchet MS';
   overflow: hidden;
 }
+
+/* Body with scroll */
 body {
   font-size: 1em;
   color: white;
@@ -37,6 +43,7 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* Top of the page with logo and info */
 header{
   display: flex;
   width: calc(100% - 1em);
@@ -55,10 +62,16 @@ header p {
   font-size: 1.5em;
 }
 
+.logo {
+  width: 15vw;
+}
+
+/* Main content of page */
 main {
   margin-top: 3em;
 }
 
+/* Article that shows the books */
 article {
   position: relative;
   width: 100%;
@@ -66,6 +79,7 @@ article {
   flex-direction: column;
 }
 
+/* Image of the book */
 article img {
   position: relative;
   top: 30px;
@@ -84,10 +98,7 @@ article img {
   align-self: center;
 }
 
-img.logo {
-  width: 15vw;
-}
-
+/* Animation if book got no image */
 @keyframes placeHolderShimmer {
   0% {
     background-position: 0px 0;
@@ -97,7 +108,7 @@ img.logo {
   }
 }
 
-
+/* Main content of page relative placed */
 .content{
   position: relative;
   width: 100%;
@@ -107,6 +118,7 @@ img.logo {
   transition: all 1s;
 }
 
+/* Link to OBA book page */
 .content a {
   color: #FE0000;
   font-weight: 800;
@@ -115,6 +127,7 @@ img.logo {
   padding: 0px 10px;
 }
 
+/* Title book */
 article h1 {
   position: relative;
   border: 5px solid var(--color1);
@@ -128,11 +141,10 @@ article h1 {
   transition: all 0.8s;
 }
 
-
+/* Navigation next and previous */
 article h1 span:nth-child(1),article h1 span:nth-child(2){
   content: " ";
   position: absolute;
-  /* clip-path: url(#next); */
   height: 2em;
   width: 2em;
   cursor: pointer;
@@ -167,6 +179,7 @@ article h1 span:nth-child(2):before{
   height: 100%;
 }
 
+/* summary book */
 article .content p {
   position: relative;
   width: 100%;
@@ -178,18 +191,20 @@ article .content p {
   transition: all 0.9s;
 }
 
-
+/* Background image fruit */
 .food{
   width: 150vw;
   position: fixed;
   top: 20%;
   left: -20%;
   height: 150vw;
+  /* Background color is color of svg */
   background-color: var(--color1);
   clip-path: url(#svgPath);
   transition: 1.5s left;
 }
 
+/* Second image background */
 body .food2{
   clip-path: url(#svgPath2);
   top: 40%;
@@ -197,19 +212,17 @@ body .food2{
   transform: rotate(50deg);
 }
 
+/* Animation background */
 body .hideFrutit{
   left: -180vw;
 }
 
+/* Animation text */
 body .opacityImage{
   transform: scale(0, 1);
 }
 
-
-
-
 /* Counter */
-
 article .year{
   position: absolute;
   top: 0;
@@ -237,12 +250,11 @@ article .setNumber{
   font-size: 4rem;
 }
 
-
 body article .setNumber:before{
   font-size: 0rem;
 }
 
-
+/* Animation of year */
 @keyframes seconds {
   0% {
       content: '0314';
@@ -281,8 +293,7 @@ body article .setNumber:before{
   }
 }
 
-
-
+/* Image to get the color from */
 #imageGetColor {
   width: 100px;
   height: 100px;
