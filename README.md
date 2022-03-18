@@ -21,6 +21,31 @@ Link to website: https://timmit147.github.io/OBA-project/website/
 
 <img src="https://user-images.githubusercontent.com/29665951/158984599-d18d1198-971e-4c05-9f16-e04e2eb80649.png"  width="250px">
 
+## Problemen code
+Tijdens het werken aan dit project ben ik een aantal problemen tegen gekomen.
+
+### 1. To many request error
+Doordat iedereen van de klas tegelijk de zelften API key gebruikten raakten de key snel tot te max aanvragen. Ik heb 2 backups gemaakt wanneer deze error tevoorschijn komt. #1 Wanneer het de eerste keer wel lukt maakt die een localstorage aan die de volgende keer opgevraagd kan worden als een backup die geuptodate is met je laatste bezoek. #2 Ik heb een json file op github staan wanneer de localstorage niet werkt.
+
+### 2. Afbeelding kleur pakken van afbeelding.
+Op de afbeeldingen van de OBA API staan beveiligingen zodat je niet direct de afbeeldingen kan gebruiken. 
+Wat je moet doen is de afbeeldingen crossOrigin Anonymous maken in javascript of html.
+
+### 3 Code werkt wel op codepen maar niet op github
+
+Het probleem was dat het laden van de afbeelding tijd kosten en een promise terug geeften. De oplossing die ik heb gedaan is de code laten wachten tot dat de afbeelding is geladen. Daarna heb ik een nieuwe afbeelding aangemaakt waar de afbeelding word opgeslagen om te gebruiken als een canvas. De reden dat ik een andere afbeelding gebruik is dat je niet wil dat je de orginele afbeelding ziet veranderen.
+
+
+```
+img.crossOrigin = "Anonymous";
+```
+
+Het probleem was dat wanneer je de afbeelding van OBA crossOrigin maakt je deze niet meer kan zien door de beveiliging. Om deze beveiliging te omzeilen kan je de link van de afbeelding omzetten naar crossOrigin;
+
+```
+let text = "https://cors-anywhere.herokuapp.com/"+document.querySelector("#imageid").src;
+```
+
 
 ## Eind recultaat
 
